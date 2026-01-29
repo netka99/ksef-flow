@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Minus, Plus } from "lucide-react";
 import { NumPad } from "./NumPad";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ProductDetailSheetProps {
   isOpen: boolean;
@@ -23,6 +23,12 @@ export function ProductDetailSheet({
   onConfirm 
 }: ProductDetailSheetProps) {
   const [quantity, setQuantity] = useState("1");
+
+  useEffect(() => {
+    if (isOpen) {
+      setQuantity("1");
+    }
+  }, [isOpen]);
 
   const handleNumber = (num: string) => {
     if (quantity === "0" && num !== ".") {
@@ -75,7 +81,7 @@ export function ProductDetailSheet({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-foreground/20 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-foreground/10 backdrop-blur-sm z-50"
           />
           
           {/* Sheet */}
@@ -84,18 +90,18 @@ export function ProductDetailSheet({
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed bottom-0 left-0 right-0 z-50 bg-card rounded-t-3xl shadow-floating max-h-[90vh] overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 z-50 bg-card rounded-t-3xl shadow-floating max-h-[85vh] overflow-hidden"
           >
             {/* Handle */}
             <div className="flex justify-center pt-3 pb-2">
-              <div className="w-10 h-1 rounded-full bg-muted" />
+              <div className="w-9 h-1 rounded-full bg-border" />
             </div>
 
             {/* Header */}
-            <div className="flex items-center justify-between px-6 pb-4">
+            <div className="flex items-center justify-between px-5 pb-4">
               <div>
-                <p className="text-xs text-muted-foreground">{product.name}</p>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="text-foreground">{product.name}</h3>
+                <p className="text-[13px] text-muted-foreground">
                   {product.price.toFixed(2)} zł / {product.unit}
                 </p>
               </div>
@@ -109,8 +115,8 @@ export function ProductDetailSheet({
             </div>
 
             {/* Quantity Display */}
-            <div className="px-6 py-6 border-t border-b border-border">
-              <div className="flex items-center justify-center gap-8">
+            <div className="px-5 py-6 border-t border-border">
+              <div className="flex items-center justify-center gap-10">
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   onClick={handleDecrement}
@@ -119,11 +125,11 @@ export function ProductDetailSheet({
                   <Minus className="w-6 h-6 text-secondary-foreground" />
                 </motion.button>
                 
-                <div className="text-center">
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
+                <div className="text-center min-w-[80px]">
+                  <p className="text-[11px] text-muted-foreground uppercase tracking-wider mb-1">
                     Ilość
                   </p>
-                  <p className="text-5xl font-bold text-foreground tabular-nums">
+                  <p className="text-5xl font-semibold text-foreground tabular-nums">
                     {quantity}
                   </p>
                 </div>
@@ -138,16 +144,6 @@ export function ProductDetailSheet({
               </div>
             </div>
 
-            {/* Quick Actions */}
-            <div className="flex gap-3 px-6 py-4">
-              <button className="flex-1 py-2.5 rounded-xl bg-secondary text-secondary-foreground text-sm font-medium">
-                Zwrot
-              </button>
-              <button className="flex-1 py-2.5 rounded-xl bg-secondary text-secondary-foreground text-sm font-medium">
-                Rabat
-              </button>
-            </div>
-
             {/* NumPad */}
             <NumPad
               onNumber={handleNumber}
@@ -156,17 +152,17 @@ export function ProductDetailSheet({
             />
 
             {/* Total & Confirm */}
-            <div className="px-6 pb-8 pt-2">
+            <div className="px-5 pb-8 pt-3">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-muted-foreground">Suma</span>
-                <span className="text-2xl font-bold text-foreground">
+                <span className="text-[15px] text-muted-foreground">Suma</span>
+                <span className="text-2xl font-semibold text-foreground">
                   {total.toFixed(2)} zł
                 </span>
               </div>
               <motion.button
                 whileTap={{ scale: 0.98 }}
                 onClick={handleConfirm}
-                className="w-full py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg shadow-soft"
+                className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-[17px]"
               >
                 Dodaj do zamówienia
               </motion.button>

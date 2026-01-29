@@ -41,13 +41,11 @@ export function ProductCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileTap={{ scale: 0.98 }}
-      className="flex items-center gap-4 p-4 bg-card rounded-2xl shadow-soft cursor-pointer"
+      whileTap={{ scale: 0.99 }}
+      className="flex items-center gap-4 p-3.5 bg-card rounded-xl shadow-soft cursor-pointer"
     >
       {/* Product Image */}
-      <div className="w-16 h-16 rounded-xl bg-muted overflow-hidden flex-shrink-0">
+      <div className="w-14 h-14 rounded-xl bg-accent overflow-hidden flex-shrink-0 flex items-center justify-center">
         {image ? (
           <img 
             src={image} 
@@ -55,21 +53,21 @@ export function ProductCard({
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-accent to-muted flex items-center justify-center">
-            <span className="text-2xl">{name.charAt(0)}</span>
-          </div>
+          <span className="text-lg font-semibold text-accent-foreground">
+            {name.charAt(0)}
+          </span>
         )}
       </div>
 
       {/* Product Info */}
       <div className="flex-1 min-w-0">
-        <h4 className="font-medium text-foreground truncate">{name}</h4>
-        <p className="text-sm text-muted-foreground">
+        <h4 className="text-[15px] font-medium text-foreground truncate">{name}</h4>
+        <p className="text-[13px] text-muted-foreground">
           {price.toFixed(2)} zł / {unit}
         </p>
         {stock !== undefined && (
-          <p className="text-xs text-muted-foreground mt-0.5">
-            {stock} szt.
+          <p className="text-[11px] text-muted-foreground mt-0.5">
+            Stan: {stock}
           </p>
         )}
       </div>
@@ -84,7 +82,7 @@ export function ProductCard({
           >
             <Minus className="w-4 h-4 text-secondary-foreground" />
           </motion.button>
-          <span className="w-8 text-center font-semibold">{quantity}</span>
+          <span className="w-6 text-center text-[15px] font-semibold text-foreground">{quantity}</span>
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={handleIncrement}
@@ -97,9 +95,9 @@ export function ProductCard({
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={handleIncrement}
-          className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-soft"
+          className="w-9 h-9 rounded-full bg-primary flex items-center justify-center"
         >
-          <Plus className="w-5 h-5 text-primary-foreground" />
+          <Plus className="w-[18px] h-[18px] text-primary-foreground" />
         </motion.button>
       )}
     </motion.div>

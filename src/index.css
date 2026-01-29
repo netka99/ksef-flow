@@ -3,122 +3,70 @@
 @tailwind utilities;
 
 /* KSeF POS Premium Design System
-   Inspired by Apple + Revolut aesthetics
+   Apple + Revolut inspired - Elegant, Minimal, Mobile-first
    All colors in HSL format */
 
 @layer base {
   :root {
-    /* Core backgrounds */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 9%;
+    /* Core backgrounds - Clean whites */
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
 
-    /* Card surfaces */
+    /* Card surfaces - Pure white */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 220 20% 10%;
 
     /* Popover/Modal surfaces */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 220 20% 10%;
 
-    /* Primary - Emerald Trust Color */
-    --primary: 160 84% 39%;
+    /* Primary - Refined Indigo (Revolut-inspired) */
+    --primary: 235 70% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft gray */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary - Soft cool gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 25%;
 
     /* Muted surfaces */
-    --muted: 210 20% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 50%;
 
-    /* Accent - Light emerald tint */
-    --accent: 160 60% 95%;
-    --accent-foreground: 160 84% 30%;
+    /* Accent - Light indigo tint */
+    --accent: 235 60% 97%;
+    --accent-foreground: 235 70% 50%;
 
-    /* Destructive - Error states */
-    --destructive: 0 72% 51%;
+    /* Destructive - Soft coral red */
+    --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Warning - Pending states */
-    --warning: 45 93% 47%;
-    --warning-foreground: 0 0% 9%;
+    /* Warning - Warm amber */
+    --warning: 38 92% 55%;
+    --warning-foreground: 38 92% 20%;
 
-    /* Success - Confirmed states */
-    --success: 160 84% 39%;
+    /* Success - Soft teal */
+    --success: 172 66% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Borders & inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 160 84% 39%;
+    /* Borders & inputs - Subtle */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 235 70% 60%;
 
-    /* Large radius for premium feel */
-    --radius: 1rem;
-    --radius-lg: 1.5rem;
-    --radius-xl: 2rem;
-
-    /* Glassmorphism */
-    --glass-bg: 0 0% 100% / 0.8;
-    --glass-border: 0 0% 100% / 0.2;
+    /* Refined radius system */
+    --radius: 0.875rem;
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.5rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 160 84% 39%;
+    --sidebar-foreground: 220 20% 25%;
+    --sidebar-primary: 235 70% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 60% 95%;
-    --sidebar-accent-foreground: 160 84% 30%;
-    --sidebar-border: 0 0% 92%;
-    --sidebar-ring: 160 84% 39%;
-  }
-
-  .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 160 70% 45%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 90%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 160 50% 15%;
-    --accent-foreground: 160 70% 70%;
-
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 0 0% 100%;
-
-    --warning: 45 80% 50%;
-    --warning-foreground: 0 0% 9%;
-
-    --success: 160 70% 45%;
-    --success-foreground: 0 0% 100%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 160 70% 45%;
-
-    --glass-bg: 0 0% 10% / 0.8;
-    --glass-border: 0 0% 100% / 0.1;
-
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 160 70% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 50% 15%;
-    --sidebar-accent-foreground: 160 70% 70%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 160 70% 45%;
+    --sidebar-accent: 235 60% 97%;
+    --sidebar-accent-foreground: 235 70% 50%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 235 70% 60%;
   }
 }
 
@@ -129,93 +77,92 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
   }
 
-  /* Premium typography scale */
+  /* Apple-style typography */
   h1 {
-    @apply text-3xl font-bold tracking-tight;
+    @apply text-[28px] font-semibold tracking-tight leading-tight;
   }
 
   h2 {
-    @apply text-2xl font-semibold tracking-tight;
+    @apply text-[22px] font-semibold tracking-tight;
   }
 
   h3 {
-    @apply text-xl font-semibold;
+    @apply text-[17px] font-semibold;
   }
 
   h4 {
-    @apply text-lg font-medium;
+    @apply text-[15px] font-medium;
+  }
+
+  p {
+    @apply text-[15px] leading-relaxed;
   }
 }
 
 @layer components {
-  /* Glassmorphism card */
-  .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-white/20 shadow-lg;
-  }
-
   /* Status indicators */
   .status-dot {
-    @apply w-2.5 h-2.5 rounded-full;
+    @apply w-2 h-2 rounded-full;
   }
 
   .status-dot-success {
     @apply status-dot bg-success;
-    animation: pulse-success 2s infinite;
+    animation: pulse-soft 2s infinite;
   }
 
   .status-dot-warning {
     @apply status-dot bg-warning;
-    animation: pulse-warning 2s infinite;
+    animation: pulse-soft 2s infinite;
   }
 
   .status-dot-error {
     @apply status-dot bg-destructive;
-    animation: pulse-error 1.5s infinite;
+    animation: pulse-soft 1.5s infinite;
   }
 
-  /* Large tap targets for POS */
+  /* Apple-style tap targets */
   .tap-target {
-    @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
 
-  /* Premium shadow system */
+  /* Refined shadow system - Apple style */
   .shadow-soft {
-    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.08), 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
   }
 
   .shadow-elevated {
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.1), 0 8px 32px -8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
   .shadow-floating {
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.15), 0 16px 48px -16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 12px 40px rgba(0, 0, 0, 0.12);
   }
 
   /* Numpad button styles */
   .numpad-btn {
-    @apply tap-target text-xl font-medium rounded-2xl bg-secondary text-secondary-foreground 
-           transition-all duration-150 active:scale-95 active:bg-muted;
+    @apply tap-target text-xl font-medium rounded-xl bg-secondary text-secondary-foreground 
+           transition-all duration-150 active:scale-[0.97] active:bg-muted;
   }
 
   .numpad-btn-action {
     @apply numpad-btn bg-primary text-primary-foreground active:bg-primary/90;
   }
 
-  /* Navigation grid item */
+  /* Navigation grid item - refined */
   .nav-grid-item {
-    @apply flex flex-col items-center justify-center gap-3 p-6 rounded-3xl bg-card 
-           shadow-soft transition-all duration-200 active:scale-95 cursor-pointer
-           hover:shadow-elevated;
+    @apply flex flex-col items-center justify-center gap-2.5 p-5 rounded-2xl bg-card 
+           shadow-soft transition-all duration-200 active:scale-[0.97] cursor-pointer;
   }
 
-  /* Status pill */
+  /* Status pill - refined */
   .status-pill {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide uppercase;
   }
 
   .status-pill-success {
@@ -223,7 +170,7 @@
   }
 
   .status-pill-warning {
-    @apply status-pill bg-warning/10 text-warning-foreground;
+    @apply status-pill bg-warning/15 text-warning-foreground;
   }
 
   .status-pill-error {
@@ -240,37 +187,24 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-}
 
-/* Animations */
-@keyframes pulse-success {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+  /* Safe area padding */
+  .safe-area-pt {
+    padding-top: max(env(safe-area-inset-top), 1rem);
   }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
+  
+  .safe-area-pb {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
   }
 }
 
-@keyframes pulse-warning {
+/* Animations - subtle, Apple-like */
+@keyframes pulse-soft {
   0%, 100% {
     opacity: 1;
   }
   50% {
     opacity: 0.5;
-  }
-}
-
-@keyframes pulse-error {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.15);
   }
 }
 
@@ -287,7 +221,7 @@
 .skeleton-shimmer {
   background: linear-gradient(90deg, 
     hsl(var(--muted)) 25%, 
-    hsl(var(--muted-foreground) / 0.1) 50%, 
+    hsl(var(--muted-foreground) / 0.08) 50%, 
     hsl(var(--muted)) 75%
   );
   background-size: 200% 100%;

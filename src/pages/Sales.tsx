@@ -170,17 +170,17 @@ const Sales = () => {
         ))}
       </section>
 
-      {/* Cart Summary */}
+      {/* Cart Summary - positioned above BottomNav */}
       {cartCount > 0 && (
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="fixed bottom-20 left-4 right-4 z-40"
+          className="fixed bottom-24 left-4 right-4 z-40"
         >
           <motion.button
             whileTap={{ scale: 0.98 }}
             onClick={() => navigate("/checkout")}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-primary text-primary-foreground shadow-elevated"
+            className="w-full flex items-center justify-between p-4 rounded-2xl bg-primary text-primary-foreground shadow-floating"
           >
             <div className="flex items-center gap-3">
               <span className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-sm font-bold">

@@ -4,6 +4,7 @@ import { ChevronLeft, Search, ScanLine, Filter } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailSheet } from "@/components/ProductDetailSheet";
+import { SaleDatePicker } from "@/components/SaleDatePicker";
 import { BottomNav } from "@/components/BottomNav";
 
 interface CartItem {
@@ -33,6 +34,7 @@ const Sales = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<typeof mockProducts[0] | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [saleDate, setSaleDate] = useState(new Date());
 
   const filteredProducts = mockProducts.filter(product => 
     product.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -95,6 +97,9 @@ const Sales = () => {
             </motion.button>
             <div className="flex-1">
               <h1 className="text-lg font-semibold text-foreground">Dostawa Sklep ABC</h1>
+              <div className="mt-1">
+                <SaleDatePicker date={saleDate} onDateChange={setSaleDate} />
+              </div>
             </div>
             <motion.button
               whileTap={{ scale: 0.9 }}

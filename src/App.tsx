@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import ShopSelection from "./pages/ShopSelection";
 import Sales from "./pages/Sales";
+import Checkout from "./pages/Checkout";
+import KSeF from "./pages/KSeF";
 import Invoices from "./pages/Invoices";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/shop-selection" element={<ShopSelection />} />
           <Route path="/sales" element={<ShopSelection />} />
           <Route path="/sales/:shopId" element={<Sales />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/ksef" element={<KSeF />} />
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/settings" element={<Settings />} />

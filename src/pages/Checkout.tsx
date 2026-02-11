@@ -58,8 +58,7 @@ const Checkout = () => {
   };
 
   const handleConfirm = () => {
-    // In real app: process payment, create invoice, etc.
-    navigate("/");
+    navigate("/post-sale");
   };
 
   return (
@@ -214,7 +213,7 @@ const Checkout = () => {
             onClick={handleConfirm}
             className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-[17px]"
           >
-            Potwierdź i zapłać
+            Zapisz
           </motion.button>
         </div>
       </motion.div>

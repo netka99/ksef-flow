@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import ShopSelection from "./pages/ShopSelection";
 import Sales from "./pages/Sales";
 import Checkout from "./pages/Checkout";
+import PostSale from "./pages/PostSale";
 import KSeF from "./pages/KSeF";
 import Invoices from "./pages/Invoices";
 import Reports from "./pages/Reports";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/sales" element={<ShopSelection />} />
           <Route path="/sales/:shopId" element={<Sales />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/post-sale" element={<PostSale />} />
           <Route path="/ksef" element={<KSeF />} />
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/reports" element={<Reports />} />

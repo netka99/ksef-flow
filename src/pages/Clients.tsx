@@ -100,6 +100,7 @@ const Clients = () => {
             </div>
             <motion.button
               whileTap={{ scale: 0.94 }}
+              onClick={() => navigate("/clients/new")}
               className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-soft"
             >
               <Plus className="w-5 h-5 text-primary-foreground" strokeWidth={2.25} />

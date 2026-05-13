@@ -13,7 +13,9 @@ import Invoices from "./pages/Invoices";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import Products from "./pages/Products";
+import NewProduct from "./pages/NewProduct";
 import Clients from "./pages/Clients";
+import NewClient from "./pages/NewClient";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

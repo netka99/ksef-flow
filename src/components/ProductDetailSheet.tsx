@@ -264,7 +264,7 @@ export function ProductDetailSheet({
             />
 
             {/* Total & Confirm */}
-            <div className="px-5 pb-12 pt-3">
+            <div className="px-5 pb-20 pt-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[15px] text-muted-foreground">Suma</span>
                 <div className="text-right">

@@ -104,7 +104,7 @@ export function ProductDetailSheet({
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed bottom-0 left-0 right-0 z-50 bg-card rounded-t-3xl shadow-floating max-h-[90vh] overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 z-[60] bg-card rounded-t-3xl shadow-floating max-h-[90vh] overflow-hidden"
           >
             {/* Handle */}
             <div className="flex justify-center pt-3 pb-2">

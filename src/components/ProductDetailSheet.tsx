@@ -95,7 +95,7 @@ export function ProductDetailSheet({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-foreground/10 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-foreground/10 backdrop-blur-sm z-[60]"
           />
           
           {/* Sheet */}

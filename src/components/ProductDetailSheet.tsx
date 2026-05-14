@@ -95,7 +95,7 @@ export function ProductDetailSheet({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-foreground/10 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-foreground/10 backdrop-blur-sm z-[60]"
           />
           
           {/* Sheet */}
@@ -104,7 +104,7 @@ export function ProductDetailSheet({
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed bottom-0 left-0 right-0 z-50 bg-card rounded-t-3xl shadow-floating max-h-[90vh] overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 z-[60] bg-card rounded-t-3xl shadow-floating max-h-[90vh] overflow-hidden"
           >
             {/* Handle */}
             <div className="flex justify-center pt-3 pb-2">
@@ -264,7 +264,7 @@ export function ProductDetailSheet({
             />
 
             {/* Total & Confirm */}
-            <div className="px-5 pb-12 pt-3">
+            <div className="px-5 pb-20 pt-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[15px] text-muted-foreground">Suma</span>
                 <div className="text-right">
